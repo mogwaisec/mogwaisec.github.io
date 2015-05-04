@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      ManageEngine EventLog Analyzer Multiple Vulnerabilities &middot; lab.mogwaisecurity.de
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/archive">Archive</a>
+    <a class="sidebar-nav-item" href="/advisories">Security Advisories</a>
+    <a class="sidebar-nav-item" href="/about">About</a>
+    <a class="sidebar-nav-item" href="https://www.mogwaisecurity.de" target="new">Company Website (German)</a>
+	  <a class="sidebar-nav-item" href="/atom.xml" target="new">Feed</a>
+    <a class="sidebar-nav-item" href="https://github.com/mogwaisec" target="new">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/mogwaisec" target="new">Twitter</a>
+  </nav>
+
+  <!--<div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>-->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <i class="fa fa-flask"></i> <a href="/" title="Home">lab.mogwaisecurity.de</a>
+            <small>because sharing is caring...</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">ManageEngine EventLog Analyzer Multiple Vulnerabilities</h1>
+  <table>
+    <tr>
+        <td>Title</td>
+        <td>ManageEngine EventLog Analyzer Multiple Vulnerabilities</td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>MSA-2014-01</td>
+    </tr>
+    <tr>
+        <td>CVE</td>
+        <td>CVE-2014-7200 (XSS), CVE-2014-7201 (SQLi)</td>
+    </tr>
+    <tr>
+        <td>Product</td>
+        <td>dmmjobcontrol (Typo3 Extension)</td>
+    </tr>
+    <tr>
+        <td>Affected versions</td>
+        <td>2.14.0</td>
+    </tr>
+    <tr>
+        <td>Impact</td>
+        <td>high</td>
+    </tr>
+    <tr>
+        <td>Remote</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>Product link</td>
+        <td>http://typo3.org/extensions/repository/view/dmmjobcontrol</td>
+    </tr>
+    <tr>
+        <td>Reported</td>
+        <td>05/09/2014</td>
+    </tr>
+    <tr>
+        <td>By</td>
+        <td>Hans-Martin Muench (Mogwai, IT-Sicherheitsberatung Muench)</td>
+    </tr>
+</table>
+
+<h2 id="vendor&#39;s-description-of-the-software:">Vendor&#39;s Description of the Software:</h2>
+
+<p>EventLog Analyzer provides the most cost-effective Security Information and
+Event Management (SIEM) software on the market. Using this Log Analyzer
+software, organizations can automate the entire process of managing terabytes
+of machine generated logs by collecting, analyzing, searching, reporting,
+and archiving from one central location. This event log analyzer software
+helps to mitigate internal threats, conduct log forensics analysis, monitor
+privileged users and comply to different compliance regulatory bodies
+by intelligently analyzing your logs and instantly generating a variety of
+reports like user activity reports, regulatory compliance reports,
+historical trend reports, and more.</p>
+
+<h2 id="business-recommendation:">Business recommendation:</h2>
+
+<p>During a penetration test, multiple vulnerabilities have been identified
+that are based on severe design/implementation flaws in the application.
+It is highly recommended not to use this software until a thorough
+security review has been performed by security professionals and all
+identified issues have been resolved.</p>
+
+<h2 id="cvss2-rating-(for-cve-2014-7201---sql-injection)">CVSS2 Rating (for CVE-2014-7201 - SQL Injection)</h2>
+
+<table>
+    <tr>
+        <td>CVSS Base Score</td>
+        <td>7.8</td>
+    </tr>
+    <tr>
+        <td>Impact Subscore</td>
+        <td>6.9</td>
+    </tr>
+    <tr>
+        <td>Exploitability Subscore</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>CVSS v2 Vector</td>
+        <td>(AV:N/AC:L/Au:N/C:C/I:N/A:N)</td>
+    </tr>
+</table>
+
+<h2 id="vulnerability-description">Vulnerability description</h2>
+
+<p>1) Unauthenticated remote code execution<br>
+ME EventLog Analyzer contains a &quot;agentUpload&quot; servlet which is used by Agents
+to send log data as zip files to the central server. Files can be uploaded without
+authentication and are stored/decompressed in the &quot;data&quot; subdirectory.</p>
+
+<p>As the decompress procedure is handling the file names in the ZIP file in a
+insecure way it is possible to store files in the web root of server. This can
+be used to upload/execute code with the rights of the application server.</p>
+
+<p>2) Authorization issues<br>
+The EventLog Analyzer web interface does not check if an authenticated has
+sufficient permissions to access certain parts of the application. A low privileged
+user (for example guest) can therefore access critical sections of the web interface,
+by directly calling the corresponding URLs. This can be used to access the database
+browser of the application which gives the attacker full access to the database.</p>
+
+<h2 id="proof-of-concept:">Proof of concept:</h2>
+
+<p>The following PoC Python script can be used to download PHP files from
+a attacker controlled host.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">1) Unauthenticated Blind SQL Injection
+The following PoC shows blind based SQL injection on the sector parameter, other
+parameters are also vulnerable
+http://xxxx/jobs/?tx_dmmjobcontrol_pi1%5Bsearch_submit%5D=Search&amp;tx_dmmjobcontrol_pi1%5Bsearch%5D%5Bsector%5D%5B%5D=3%29and%20benchmark%2820000000%2csha1%281%29%29--%20
+
+2) Reflected Cross Site Scripting (XSS)
+http://172.16.37.232/typo3/jobs/?tx_dmmjobcontrol_pi1%5Bsearch_submit%5D=Search&amp;tx_dmmjobcontrol_pi1%5Bsearch%5D%5Bkeyword%5D=&quot;&gt;&lt;script&gt;alert(1);&lt;/script&gt;
+</code></pre></div>
+<h2 id="disclosure-timeline:">Disclosure timeline:</h2>
+
+<table>
+    <tr>
+        <td>05/09/2014</td>
+        <td>Reporting to the Typo3 Security team</td>
+    </tr>
+    <tr>
+        <td>05/09/2014</td>
+        <td>Response from Typo3 Security team that they received the mail</td>
+    </tr>
+    <tr>
+        <td>24/09/2014</td>
+        <td>Mail to Typo3 Security team, asking for the current status</td>
+    </tr>
+    <tr>
+        <td>25/09/2014</td>
+        <td>Response from Typo3 Security Team that they released an advisory[1]</td>
+    </tr>
+    <tr>
+        <td>25/09/2014</td>
+        <td>Release of public advisory</td>
+    </tr>
+</table>
+
+<h2 id="workaround-(use-on-your-own-responsiblity):">Workaround (use on your own responsiblity):</h2>
+
+<p>In the file:
+typo3conf/ext/dmmjobcontrol/pi1/class.tx_dmmjobcontrol_pi1.php</p>
+
+<p>To fix the Cross Site Scripting (XSS) vulnerability, replace line 112 with the
+following PHP code:</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$markerArray[&#39;###KEYWORD_VALUE###&#39;] = htmlspecialchars($session[&#39;search&#39;][&#39;keyword&#39;], ENT_QUOTES);</span>
+</code></pre></div>
+<p>To fix the SQL Injection vulnerability, replace line 257 with the following
+PHP code:</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$whereAdd[] = $table.&#39;.uid_local=tx_dmmjobcontrol_job.uid AND (&#39;.$table.&#39;.uid_foreign=&#39;.implode(&#39; OR &#39;.$table.&#39;.uid_foreign=&#39;, intval($value)).&#39;)&#39;;</span>
+</code></pre></div>
+<h2 id="references:">References:</h2>
+
+<p>[1] TYPO3-EXT-SA-2014-012: Several vulnerabilities in extension JobControl (dmmjobcontrol)
+<a href="http://typo3.org/teams/security/security-bulletins/typo3-extensions/typo3-ext-sa-2014-012">http://typo3.org/teams/security/security-bulletins/typo3-extensions/typo3-ext-sa-2014-012</a></p>
+
+<p>Advisory URL: <a href="https://www.mogwaisecurity.de/#lab">https://www.mogwaisecurity.de/#lab</a></p>
+
+<p>Mogwai, IT-Sicherheitsberatung Muench<br>
+Steinhoevelstrasse 2/2<br>
+89075 Ulm (Germany)  </p>
+
+<p><a href="mailto:info@mogwaisecurity.de">info@mogwaisecurity.de</a></p>
+
+</div>
+
+
+		
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

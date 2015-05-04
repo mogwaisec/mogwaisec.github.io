@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            lab.mogwaisecurity.de
+tagline:          'because sharing is caring...'
+description:      ''
+url:              http://lab.mogwaisecurity.de/
+
+author:
+  name:           'Mogwai Security'
+  url:            https://www.mogwaisecurity.de
+  twitter:        https://twitter.com/mogwaisec
+  github:         https://github.com/mogwaisec
+
+paginate:         1
+
+# Custom vars
+github:
+  repo:           https://github.com/mogwaisec
+
+categories: [advisory, tool]
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]

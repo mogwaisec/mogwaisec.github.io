@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>lab.mogwaisecurity.de</title>
+ <link href="http://lab.mogwaisecurity.de//atom.xml" rel="self"/>
+ <link href="http://lab.mogwaisecurity.de//"/>
+ <updated>2015-05-04T14:04:47+02:00</updated>
+ <id>http://lab.mogwaisecurity.de/</id>
+ <author>
+   <name>Mogwai Security</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Telekom bug bounty part 1 (Remote Code Execution)</title>
+   <link href="http://lab.mogwaisecurity.de//2015/04/27/telekom-bug-bounty-part-1/"/>
+   <updated>2015-04-27T00:00:00+02:00</updated>
+   <id>http://lab.mogwaisecurity.de//2015/04/27/telekom-bug-bounty-part-1</id>
+   <content type="html">&lt;p&gt;During easter 2015, we decided to try our luck on the &lt;a href=&quot;https://www.telekom.com/bug-bounty-program&quot;&gt;bug bounty program of the German Telekom&lt;/a&gt;. This program is special as
+Telekom only pays bounties for bugs with a high security impact. In fact, the program details limits this to SQL Injection
+and Remote Code Execution (RCE) vulnerabilities in web based portals. To bad, however it also limits the stuff that we have
+to look for.&lt;/p&gt;
+
+&lt;p&gt;In contrast to most other companies that offer bug bounties, the German Telekom is quite big (228 000 Employees) and exists since 1996. If you ever worked in a big company you know that most of them establish new web based portals/applications all the
+time. So with some luck it might be possible to find a old application with some exploitable vulnerabilities.&lt;/p&gt;
+
+&lt;p&gt;Long store short, we discovered some interesting bugs and reported them to the Telekom Cert. While we did not receive money
+for all vulnerabilities it was still a interesting experience.&lt;/p&gt;
+
+&lt;h2 id=&quot;exploiting-cve-2013-2251&quot;&gt;Exploiting CVE-2013-2251&lt;/h2&gt;
+
+&lt;p&gt;The first vulnerability that we exploited was CVE-2013-2251, a well known RCE vulnerability in the JEE framework &amp;quot;Struts 2&amp;quot;. Struts 2 based applications use the file type &amp;quot;.action&amp;quot;, so we just googled for that:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/telekom_bug_bounty_google.png&quot; alt=&quot;Searching for Struts 2 Applications&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, this resulted in only one system/application. In a next step we used various command names to get more information about the system and the JEE application. This led to following error message which revealed the used Tomcat version:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/telekom_bug_bounty_tomcat.png&quot; alt=&quot;Tomcat Version&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The used Tomcat version is quite old but does not have a easy exploitable vulnerability. The version information is still important as it allows you to make some guesses about the system. Tomcat 6.0.20 was released on 3 Jun 2009. If the administrators didn&amp;#39;t update the application server since then, they probably also didn&amp;#39;t update the framework used by the application, even if it contains a critical issue.&lt;/p&gt;
+
+&lt;p&gt;In the last years, the Struts2 framework had several serious remote code execution vulnerabilities. We decided
+to try CVE-2013-2251 first, for following reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is well documented, various PoC examples are available&lt;/li&gt;
+&lt;li&gt;Exploitation can be done via GET requests, this simplifies the creation of PoC URLs (we are lazy)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We used the following PoC to verify that the application is indeed vulnerable:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hosting-guestlogin.telekom.de/sessionmanagement/u4/loginExists.action?redirect:%24%7Bnew%20%20%20java.lang.String(%20%27rce-poc%27%20%20)&quot;&gt;https://hosting-guestlogin.telekom.de/sessionmanagement/u4/loginExists.action?redirect:%24{new%20%20%20java.lang.String(%20%27rce-poc%27%20%20)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The application tried to redirect us to &amp;quot;rce-poc&amp;quot;, which means that the issue can be exploited.&lt;/p&gt;
+
+&lt;p&gt;We created a additional check that called the OS command ping to ping an external host, which we were able to verify via tpcdump:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/telekom_bug_bounty_icmp.png&quot; alt=&quot;Pinging our own host&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;telekom-response&quot;&gt;Telekom response&lt;/h2&gt;
+
+&lt;p&gt;The issue was reported to the Telekom Cert team which confirmed it immediately. Unfortunately we didn&amp;#39;t receive any money for that bug as
+it is based on a third party component. We expected that when we read the disclosure policy.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

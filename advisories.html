@@ -1,0 +1,38 @@
+---
+layout: page
+title: Security Advisories
+---
+<p>
+The following vulnerabilities were discovered and reported by Mogwai Security:
+</p>
+<table>
+<thead>
+  <td>ID</td><td>Description</td>
+</thead>
+<tbody>
+
+{% for page in site.pages %}
+  {% if page.categories contains 'advisory' %}
+     <tr><td><a href="/advisories/{{page.id}}">{{page.id}}</a></td><td><a href="/advisories/{{page.id}}">{{page.title}}</a></td></tr>
+  {% endif %}
+{% endfor %}
+</tbody>
+</table>
+
+<h2>Mogwai Vulnerability Disclosure Policy</h2>
+<p>
+This policy outlines how Mogwai handles responsible vulnerability disclosure to product vendors and the general public. Mogwai will responsibly and promptly notify the appropriate product vendor of a security flaw with their product(s) or service(s). It is the goal of this policy to balance the need of the public to be informed of security vulnerabilities with vendors’ need for time to respond effectively.
+</p>
+<p>
+Our policy is based on the vulnerability disclosure policy from Thierry Zoller, with slightly modified time frames.
+</p>
+<p>
+  <p>This policy outlines how Mogwai handles responsible vulnerability disclosure to product vendors and the general public. Mogwai will responsibly and promptly notify the appropriate product vendor of a security flaw with their product(s) or service(s). It is the goal of this policy to balance the need of the public to be informed of security vulnerabilities with vendors&#8217; need for time to respond effectively.</p><p>Our policy is based on the <a
+  title="Thierry Zoller vulnerability disclosure policy" href="http://blog.zoller.lu/2008/09/notification-and-disclosure-policy.html" target="_blank">vulnerability disclosure policy from Thierry Zoller</a>, with slightly modified time frames.</p><ol><li>If no security contact is known for the vendor and no security contact can be found at <a
+  title="Open Source Vulnerability Database" href="http://www.osvdb.org/" target="_blank">OSVDB</a>, an e-mail requesting the security contact e-mail address may initially be sent to certain public e-mail addresses associated with the vendor. Online forms may only be used to request security contact information.</li><li>When a security contact or other relevant e-mail address has been identified, a vendor initially receives a mail with vulnerability details along with a pre-set disclosure date (usually set to a Wednesday two week later).</li><li>If the vendor does not respond to the initial mail within a week, it is resent.</li><li>If no response has been received at the day of the pre-set disclosure date, the vulnerability information is published immediately without further coordination attempts.</li><li>If the vendor responds to either the initial mail or the resent mail, a new disclosure date may be set in case the vendor cannot meet the pre-set date.</li><li>We expect to receive continuous status updates from the vendor and a list of all affected products, should no list be given it is assumed all products are vulnerable. If none are provided by default, the vendor will be contacted about once a month with a status update request (if time permits).</li><li>Should a vendor not respond to a status update request, it is resent.</li><li>Should the vendor not respond to two consecutive status update requests, a mail is sent to the vendor advising that the vulnerability information will be disclosed a week later if no response is received. Has no response been received by this date, the vulnerability information is immediately published without further coordination attempts.</li><li>Eventually, the vulnerability information will be published by me when:<br
+  /> a) The pre-set/agreed disclosure date is reached.<br
+  /> b) The vendor issues a fix and/or security advisory<br
+  /> c) Information about the same vulnerability is published by a third party.<br
+  /> d) A year from the initial contact date has passed<br
+  /> e) the vendor denies the security nature of the bug and/or gives no credit for my work</li><li>Unless the vendor asks for an extension, as will not coordinate a vulnerability disclosure for more than 6 months. After 6 months the details will be published regardless of patch availability.</li></ol>
+</p>
